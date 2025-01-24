@@ -1,17 +1,15 @@
-# NestJS Product Microservice
+# Product Microservice
 
-Este microservicio está desarrollado con [NestJS](https://nestjs.com/) y utiliza [Prisma](https://www.prisma.io/) como ORM para la gestión de la base de datos.
+## dev
 
-## 🚀 Características
-- **Modularidad**: Arquitectura escalable y mantenible.
-- **Prisma ORM**: Conexión eficiente con la base de datos.
-- **Rápido inicio**: Listo para desarrollo local con configuración mínima.
+1. Clonar el repositorio
+2. Instalar dependencias
+3. Crear un archivo `.env` basado en el `env.template`
+4. Ejecutar migración de prisma `npx prisma migrate dev`
+5. Levantar el servidor de NATS
 
-## 🛠️ Instalación y configuración
-Sigue estos pasos para clonar y ejecutar el proyecto en tu entorno local:
+```
+docker run -d --name nats-server -p 4222:4222 -p 8222:8222 nats
+```
 
-Clonar el repositorio
-Instalar dependencias
-Crear un archivo .env basado en el env.template
-Ejecutar migración de prisma npx prisma migrate dev
-Ejecutar npm run start:dev
+6. Ejecutar `npm run start:dev`
